@@ -12,13 +12,18 @@ import Video from './pages/Video'
 import Search from './pages/Search'
 import Not from './pages/Not'
 import Channel from './pages/Channel'
+import Header from './components/seciton/Header'
+import Main from './components/seciton/Main'
+import Footer from './components/seciton/Footer'
 
 
 const App = () => {
     return (
         <BrowserRouter>
-          <Routes>
+        <Header/>
+        <Main>
 
+          <Routes>
             <Route path='/' element={<Home/>}></Route>
             <Route path='/today' element={<Today/>}></Route>
             <Route path='/developer' element={<Developer/>}></Route>
@@ -31,8 +36,10 @@ const App = () => {
             <Route path='/video/:videoID' element={<Video/>}></Route>
             <Route path='/search/:searchID' element={<Search/>}></Route>
             <Route path='/*' element={<Not/>}></Route>
-
           </Routes>
+          
+          </Main>
+          <Footer/>
         </BrowserRouter>
     )
 }
